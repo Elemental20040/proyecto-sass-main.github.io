@@ -1,0 +1,9 @@
+// ================================
+// 🎯 Mixin para media queries
+// Uso: @include respond(md) { ... }
+// ================================
+@mixin respond($size) {
+  @media (min-width: map-get($breakpoints, $size)) {
+    @content;
+  }
+}

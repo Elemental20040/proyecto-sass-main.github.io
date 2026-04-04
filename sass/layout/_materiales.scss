@@ -1,0 +1,140 @@
+@use '../variables';
+@use '../mixins';
+@use '../components/card_ben';
+ 
+
+
+.beneficios{
+    background-color: variables.$secondary-color;
+    height: variables.$container-sm;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    .beneficios-card{
+        width: 30%;
+        height: variables.$container-height-sm;
+        display: flex;
+        flex-direction: column;
+        justify-content: space-around;
+        align-items: flex-start;
+        text-align: left;
+        padding-left: variables.$spacing-xxxl;
+        margin-right: variables.$spacing-xl;
+
+        h3{
+            font-size: variables.$font-size-xxl;
+            color: variables.$color-dark;
+            margin-bottom: variables.$spacing-sm;
+            margin-top: variables.$spacing-xs;
+        }
+
+        p{
+            font-size: variables.$font-size-base;
+            color: variables.$color-text;
+            margin-top: 0;
+            margin-bottom: variables.$spacing-lg;
+        }
+
+        button{
+            background-color: variables.$color-dark;
+            color: variables.$primary-color;
+            border: none;
+            padding: variables.$spacing-md variables.$spacing-lg;
+            font-size: variables.$font-size-md;
+            border-radius: variables.$radius-sm;
+            cursor: pointer;
+
+            &:hover{
+                background-color: variables.$color-text;
+            }
+        }
+    }
+}
+
+.image-carrusel {
+  position: relative;
+  width: 80%;
+  margin: auto;
+  overflow: hidden;
+
+  .carrousel-track {
+    display: flex;
+    transition: transform 0.4s ease;
+  }
+
+  .card {
+    position: relative;
+    min-width: 60%;
+    img {
+      width: 80%;
+      height: auto;
+      display: block;
+    }
+
+    .card-info {
+      position: absolute;
+      width: 70%;
+      bottom: 20px;
+      left: 20px;
+      background: rgba(255,255,255,0.9);
+      padding: 1rem;
+      border-radius: 8px;
+      display: flex;
+      flex-direction: column;
+      gap: 0.5rem;
+
+      span {
+        font-size: 0.9rem;
+        color: gray;
+      }
+
+      h3 {
+        font-size: 1.2rem;
+        color: black;
+      }
+
+      button {
+        align-self: flex-end;
+        background: gray;
+        color: white;
+        border: none;
+        padding: 0.5rem 0.8rem;
+        border-radius: variables.$radius-sm;
+        cursor: pointer;
+      }
+    }
+  }
+
+  button.prev, button.next {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    background: rgba(236, 236, 236, 0.5);
+    color: rgb(0, 0, 0);
+    border: none;
+    padding: 0.5rem 1rem;
+    border-radius: variables.$radius-round;
+    cursor: pointer;
+
+    &.prev { left: 10px; }
+    &.next { right: 10px; }
+  }
+
+  .carousel-dots {
+    position: absolute;
+    bottom: 10px;
+    left: 50%;
+    transform: translateX(-50%);
+    display: flex;
+    gap: 8px;
+
+    .dot {
+      width: 10px;
+      height: 10px;
+      background: gray;
+      border-radius: 50%;
+      &.active { background: black; }
+    }
+  }
+}

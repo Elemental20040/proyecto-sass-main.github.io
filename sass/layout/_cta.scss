@@ -1,0 +1,65 @@
+@use '../variables';
+ @use '../mixins';
+
+ .cta{
+    background-color: variables.$primary-color;
+    height: variables.$container-sm;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    text-align: center;
+
+    div{
+        font-size: variables.$font-size-xl;
+        color: variables.$color-dark;
+        margin-bottom: variables.$spacing-sm;
+        margin-top: variables.$spacing-xs;
+    }
+
+    button{
+        background-color: variables.$color-dark;
+        color: variables.$primary-color;
+        border: none;
+        padding: variables.$spacing-md variables.$spacing-lg;
+        font-size: variables.$font-size-md;
+        border-radius: variables.$radius-sm;
+        cursor: pointer;
+
+        &:hover{
+            background-color: variables.$color-text;
+        }
+    }
+ }
+
+ .marcas-aliadas{
+    background-color: variables.$secondary-color;
+    height: variables.$container-ls;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    align-items: center;
+    font-size: variables.$font-size-xl;
+    .marcas-logos{
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+        width: 100%;
+    }
+
+    img{
+        height: 60px;
+        width: auto;
+        margin: variables.$spacing-md;
+        filter: grayscale(100%);
+        opacity: 0.7;
+
+        &:hover{
+            filter: none;
+            opacity: 1;
+            transform: scale(1.05);
+            transition: all 0.3s ease-in-out;
+        }
+    }
+ }

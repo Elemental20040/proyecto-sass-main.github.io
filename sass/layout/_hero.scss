@@ -1,0 +1,58 @@
+@use '../variables';
+@use '../mixins';
+
+.hero{
+    background-color: variables.$secondary-color;
+    width: 100%;
+    height: variables.$container-sm;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;    
+    div{
+        width: 45%;
+        height: variables.$container-height-sm;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        text-align: left;
+        background-color: variables.$primary-color;
+        padding-left: variables.$spacing-xl;
+        margin-right: variables.$spacing-xl;
+
+        h5{
+            font-size: variables.$font-size-md;
+            color: variables.$color-dark;
+            margin-bottom: variables.$spacing-sm;
+            margin-top: variables.$spacing-xs;
+        }
+
+        h1{
+            font-size: variables.$font-size-xxl;
+            color: variables.$color-dark;
+            margin-top: variables.$spacing-xs;
+            margin-bottom: variables.$spacing-md;
+        }
+
+        .hero-content-description{
+            font-size: variables.$font-size-sm;
+            color: variables.$color-text;
+            margin-top: 0;
+            margin-bottom: variables.$spacing-lg;
+        }
+
+        button{
+            background-color: variables.$color-dark;
+            color: variables.$primary-color;
+            border: none;
+            padding: variables.$spacing-md variables.$spacing-lg;
+            font-size: variables.$font-size-md;
+            border-radius: variables.$radius-sm;
+            cursor: pointer;
+
+            &:hover{
+                background-color: variables.$color-text;
+            }
+        }
+    }
+}

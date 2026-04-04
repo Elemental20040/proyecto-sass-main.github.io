@@ -1,0 +1,108 @@
+@use "../variables";
+@use "../mixins";
+
+.contactanos {
+  background-color: variables.$secondary-color;
+  height: variables.$container-sm;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+  align-items: center;
+  text-align: start;
+  padding-left: variables.$spacing-xl;
+
+  .contactanos-content-one {
+    display: flex;
+    flex-direction: column;
+    justify-content: start;
+    width: 50%;
+
+    .contactanos-text {
+      font-size: variables.$font-size-xl;
+      color: variables.$color-dark;
+      width: 80%;
+    }
+    h3 {
+      font-size: variables.$font-size-xl;
+      color: variables.$color-dark;
+      padding: 0px;
+    }
+  }
+  .contactanos-content-two {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    width: 50%;
+    height: 80%;
+    background-color: variables.$primary-color;
+
+    .formulario {
+      width: 70%;
+      display: flex;
+      flex-direction: column;
+      justify-content: center;
+      align-items: center;
+      gap: variables.$spacing-md;
+      padding: variables.$spacing-lg;
+      background-color: #061c64ff;
+    }
+    form {
+      display: flex;
+      flex-direction: column;
+      justify-content: start;
+      align-items: start;
+      width: 80%;
+
+      h3 {
+        font-size: variables.$font-size-md;
+        color: variables.$color-dark;
+        padding: 0px;
+      }
+
+      input {
+        padding: variables.$spacing-sm;
+        font-size: variables.$font-size-base;
+        border: 1px solid variables.$color-text;
+        border-radius: variables.$radius-sm;
+        width: 95%;
+
+        &:focus {
+          outline: none;
+          border-color: variables.$primary-color;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+      }
+
+      textarea {
+        padding: variables.$spacing-sm;
+        font-size: variables.$font-size-base;
+        border: 1px solid variables.$color-text;
+        border-radius: variables.$radius-sm;
+        resize: vertical;
+        width: 95%;
+
+        &:focus {
+          outline: none;
+          border-color: variables.$primary-color;
+          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
+        }
+      }
+    }
+  }
+
+  button {
+    background-color: variables.$color-dark;
+    color: variables.$primary-color;
+    border: none;
+    padding: variables.$spacing-md variables.$spacing-lg;
+    font-size: variables.$font-size-md;
+    border-radius: variables.$radius-sm;
+    cursor: pointer;
+    width: 100%;
+
+    &:hover {
+      background-color: variables.$color-text;
+    }
+  }
+}

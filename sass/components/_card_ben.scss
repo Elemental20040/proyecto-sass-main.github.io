@@ -1,0 +1,18 @@
+@use '../variables';
+@use '../mixins';
+
+.card{
+    display: block;
+    width: variables.$container-ls;
+    height: variables.$container-height-sm;
+    margin: 0 variables.$spacing-md;
+    background-color: variables.$tertiary-color;
+    border-radius: variables.$radius-sm;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+
+    &:hover {
+        transform: scale(1.05);
+        box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    }
+}
