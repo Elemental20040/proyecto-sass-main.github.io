@@ -2,34 +2,46 @@
 @use '../mixins';
 
 .hero{
-    background-color: variables.$secondary-color;
-    width: 100%;
+    background-image: url('/sass/imagen/banner.webp');
+    background-size: cover; /* ajusta la imagen al tamaño del contenedor */
+    background-position: center; /* centra la imagen */
+    background-repeat: no-repeat;
+    height: 100vh; /* pantalla completa */
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    padding: 0 8%;
+    color: #1a1a1a;
+    position: relative;
     height: variables.$container-sm;
     display: flex;
     justify-content: flex-end;
-    align-items: center;    
+    align-items: center;      
     div{
-        width: 45%;
-        height: variables.$container-height-sm;
+        width: 340px;
+        height: 270px;
+        position: relative;
+        background: rgba(variables.$primary-color, 0.7);
+        padding: 40px;
+        border-radius: 16px;
+        max-width: 500px;
+        box-shadow: 0 10px 25px rgba(0,0,0,0.1);
+        backdrop-filter: blur(15px);
         display: flex;
-        flex-direction: column;
+        flex-direction: column ;
         justify-content: center;
-        align-items: flex-start;
-        text-align: left;
-        background-color: variables.$primary-color;
-        padding-left: variables.$spacing-xl;
-        margin-right: variables.$spacing-xl;
+        align-items: start;
 
         h5{
             font-size: variables.$font-size-md;
-            color: variables.$color-dark;
+            color: variables.$color-text;
             margin-bottom: variables.$spacing-sm;
             margin-top: variables.$spacing-xs;
         }
 
         h1{
             font-size: variables.$font-size-xxl;
-            color: variables.$color-dark;
+            color: variables.$color-warning;
             margin-top: variables.$spacing-xs;
             margin-bottom: variables.$spacing-md;
         }
@@ -42,7 +54,7 @@
         }
 
         button{
-            background-color: variables.$color-dark;
+            background-color: variables.$color-warning;
             color: variables.$primary-color;
             border: none;
             padding: variables.$spacing-md variables.$spacing-lg;

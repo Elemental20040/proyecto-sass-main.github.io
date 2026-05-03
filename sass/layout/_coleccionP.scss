@@ -1,14 +1,32 @@
 @use '../variables';
  @use '../mixins';
+ @use '../components/coleccion_item';
 
  .coleccion-destacada{
-   background: variables.$secondary-color;
-   border: 3px solid;  
+   background: white; 
+   display: flex;
+   flex-direction: column;
+   align-items: center;
+   height: 670px;
+
+   .coleccion-items{
+    display: flex;
+    flex-direction: row;
+    background: #f8f9fa;
+    border-radius: 16px;
+    overflow: hidden;
+    box-shadow: 0 5px 20px rgba(0,0,0,0.08);
+    transition: transform 0.3s, box-shadow 0.3s;
+    cursor: pointer;
+   }
   }
   
  .coleccion-destacada h2{
-   background: variables.$secondary-color;  
-   text-align: center;
+   font-size: 2rem;
+   font-weight: 700;
+   margin-bottom: 40px;
+   color: #e63946; /* color principal de tu marca */
+   letter-spacing: 1px;
  }
   .coleccion-destacada h3{
     text-align: center;

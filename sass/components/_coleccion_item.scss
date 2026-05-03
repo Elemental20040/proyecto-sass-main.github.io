@@ -1,0 +1,36 @@
+@use '../variables';
+@use '../mixins';
+
+.item{
+    border-radius: variables.$radius-md;
+    padding-right: variables.$spacing-sm;
+    padding-left: variables.$spacing-sm;
+    margin: variables.$spacing-sm;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    img {
+        width: 300px;
+        height: 400px;
+        border-radius: variables.$radius-sm;
+        margin-bottom: variables.$spacing-sm;
+        transition: transform 0.8s ease; 
+        } 
+
+  &:hover {
+    transform: scale(1.1); // Aumenta el tamaño un 10%
+    }
+    
+    h4 {
+        font-size: variables.$font-size-lg;
+        color: variables.$color-dark;
+        margin-bottom: variables.$spacing-xs;
+    }
+    
+    p {
+        font-size: variables.$font-size-md;
+        color: variables.$color-text;
+        text-align: center;
+    }
+    
+}

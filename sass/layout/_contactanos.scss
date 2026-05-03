@@ -2,107 +2,110 @@
 @use "../mixins";
 
 .contactanos {
-  background-color: variables.$secondary-color;
-  height: variables.$container-sm;
+  background-color: variables.$primary-color;
+  min-height: variables.$container-sm;
   display: flex;
-  flex-direction: row;
-  justify-content: space-around;
+  justify-content: space-between;
   align-items: center;
-  text-align: start;
-  padding-left: variables.$spacing-xl;
+  padding: variables.$spacing-xxl variables.$spacing-xl;
+  gap: variables.$spacing-xl;
+
 
   .contactanos-content-one {
-    display: flex;
-    flex-direction: column;
-    justify-content: start;
-    width: 50%;
-
-    .contactanos-text {
-      font-size: variables.$font-size-xl;
-      color: variables.$color-dark;
-      width: 80%;
-    }
-    h3 {
-      font-size: variables.$font-size-xl;
-      color: variables.$color-dark;
-      padding: 0px;
-    }
-  }
-  .contactanos-content-two {
+    flex: 1;
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: center;
-    width: 50%;
-    height: 80%;
-    background-color: variables.$primary-color;
+    align-items: flex-start;
+    gap: variables.$spacing-md;
 
-    .formulario {
-      width: 70%;
-      display: flex;
-      flex-direction: column;
-      justify-content: center;
-      align-items: center;
-      gap: variables.$spacing-md;
-      padding: variables.$spacing-lg;
-      background-color: #061c64ff;
+    h3 {
+      font-size: variables.$font-size-xxl;
+      color: variables.$color-text;
+      margin: 0;
     }
-    form {
-      display: flex;
-      flex-direction: column;
-      justify-content: start;
-      align-items: start;
-      width: 80%;
 
-      h3 {
-        font-size: variables.$font-size-md;
-        color: variables.$color-dark;
-        padding: 0px;
-      }
-
-      input {
-        padding: variables.$spacing-sm;
-        font-size: variables.$font-size-base;
-        border: 1px solid variables.$color-text;
-        border-radius: variables.$radius-sm;
-        width: 95%;
-
-        &:focus {
-          outline: none;
-          border-color: variables.$primary-color;
-          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-      }
-
-      textarea {
-        padding: variables.$spacing-sm;
-        font-size: variables.$font-size-base;
-        border: 1px solid variables.$color-text;
-        border-radius: variables.$radius-sm;
-        resize: vertical;
-        width: 95%;
-
-        &:focus {
-          outline: none;
-          border-color: variables.$primary-color;
-          box-shadow: 0 0 5px rgba(0, 123, 255, 0.5);
-        }
-      }
+    .contactanos-text {
+      font-size: variables.$font-size-md;
+      color: variables.$color-text;
+      width: 85%;
+      line-height: 1.6;
     }
   }
 
-  button {
-    background-color: variables.$color-dark;
-    color: variables.$primary-color;
-    border: none;
-    padding: variables.$spacing-md variables.$spacing-lg;
-    font-size: variables.$font-size-md;
-    border-radius: variables.$radius-sm;
-    cursor: pointer;
-    width: 100%;
+  .contactanos-content-two {
+    flex: 1;
+    background-color: variables.$primary-color;
+    border-radius: variables.$radius-lg;
+    box-shadow: 0 8px 25px rgba(0, 0, 0, 0.1);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: variables.$spacing-xl;
 
-    &:hover {
-      background-color: variables.$color-text;
+    .formulario {
+      width: 100%;
+      max-width: 400px;
+      background-color: rgba(variables.$color-warning, 0.1);
+      border-radius: variables.$radius-md;
+      padding: variables.$spacing-xl;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      display: flex;
+      flex-direction: column;
+      gap: variables.$spacing-md;
+
+      h3 {
+        font-size: variables.$font-size-lg;
+        color: variables.$color-text;
+        margin-bottom: variables.$spacing-md;
+      }
+
+      form {
+        display: flex;
+        flex-direction: column;
+        gap: variables.$spacing-md;
+
+        input,
+        textarea {
+          width: 100%;
+          padding: variables.$spacing-sm;
+          border: none;
+          border-radius: variables.$radius-sm;
+          font-size: variables.$font-size-base;
+          color: variables.$color-dark;
+          background-color: #fff;
+
+          &:focus {
+            outline: none;
+            border: 1px solid lighten(variables.$primary-color, 10%);
+            box-shadow: 0 0 8px rgba(variables.$primary-color, 0.4);
+          }
+        }
+
+        textarea {
+          resize: vertical;
+          min-height: 100px;
+        }
+
+        button {
+          background-color: variables.$color-warning;
+          color: #fff;
+          border: none;
+          border-radius: variables.$radius-sm;
+          padding: variables.$spacing-md;
+          font-size: variables.$font-size-md;
+          cursor: pointer;
+          font-weight: 600;
+          text-transform: uppercase;
+          letter-spacing: 0.5px;
+          transition: background-color 0.3s ease, transform 0.2s;
+
+          &:hover {
+            background-color: darken(variables.$color-dark, 10%);
+            transform: translateY(-2px);
+          }
+        }
+      }
     }
   }
 }

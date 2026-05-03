@@ -1,0 +1,61 @@
+@use '../variables';
+@use '../mixins';
+
+.footer {
+  background-color: #111;
+  color: #fff;
+  text-align: center;
+  padding: 2rem 1rem;
+  font-family: "Poppins", sans-serif;
+
+  .footer-links {
+    list-style: none;
+    padding: 0;
+    margin-bottom: 1rem;
+
+    li {
+      display: inline-block;
+      margin: 0 1rem;
+
+      a {
+        color: #bbb;
+        text-decoration: none;
+        transition: color 0.3s;
+
+        &:hover {
+          color: #fff;
+        }
+      }
+    }
+  }
+
+  .footer-links {
+    margin-bottom: 1rem;
+
+    a {
+      margin: 0 0.5rem;
+      display: inline-block;
+    }
+  }
+
+  .footer-social {
+    margin-bottom: 1rem;
+
+    img {
+      width: 30px;
+      height: 30px;
+      margin: 0 0.5rem;
+      filter: brightness(0) invert(1);
+      transition: filter 0.3s;
+
+      &:hover {
+        filter: brightness(0) invert(0.7);
+      }
+    }
+  }
+
+  .copyright {
+    font-size: 0.9rem;
+    color: #777;
+  }
+}

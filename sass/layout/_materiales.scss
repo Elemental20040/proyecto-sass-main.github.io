@@ -1,129 +1,162 @@
 @use '../variables';
 @use '../mixins';
 @use '../components/card_ben';
- 
 
+.beneficios {
+  background-color: rgba(variables.$color-warning, 0.08);
+  min-height: variables.$container-sm;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: space-between;
+  align-items: center;
+  gap: variables.$spacing-xxl;
+  padding: variables.$spacing-xxxl;
+  padding-top: 0;
+  padding-bottom: 0;
 
-.beneficios{
-    background-color: variables.$secondary-color;
-    height: variables.$container-sm;
+  .beneficios-card {
+    flex: 1 1 350px;
+    max-width: 450px;
     display: flex;
-    flex-direction: row;
-    justify-content: space-around;
-    align-items: center;
-    .beneficios-card{
-        width: 30%;
-        height: variables.$container-height-sm;
-        display: flex;
-        flex-direction: column;
-        justify-content: space-around;
-        align-items: flex-start;
-        text-align: left;
-        padding-left: variables.$spacing-xxxl;
-        margin-right: variables.$spacing-xl;
+    flex-direction: column;
+    justify-content: center;
+    text-align: left;
 
-        h3{
-            font-size: variables.$font-size-xxl;
-            color: variables.$color-dark;
-            margin-bottom: variables.$spacing-sm;
-            margin-top: variables.$spacing-xs;
-        }
-
-        p{
-            font-size: variables.$font-size-base;
-            color: variables.$color-text;
-            margin-top: 0;
-            margin-bottom: variables.$spacing-lg;
-        }
-
-        button{
-            background-color: variables.$color-dark;
-            color: variables.$primary-color;
-            border: none;
-            padding: variables.$spacing-md variables.$spacing-lg;
-            font-size: variables.$font-size-md;
-            border-radius: variables.$radius-sm;
-            cursor: pointer;
-
-            &:hover{
-                background-color: variables.$color-text;
-            }
-        }
+    h3 {
+      font-size: variables.$font-size-xxl;
+      color: variables.$color-dark;
+      margin-bottom: variables.$spacing-sm;
     }
+
+    p {
+      font-size: variables.$font-size-base;
+      color: variables.$color-text;
+      line-height: 1.6;
+      margin-bottom: variables.$spacing-lg;
+    }
+
+    button {
+      background-color: variables.$color-warning;
+      color: variables.$primary-color;
+      border: none;
+      padding: variables.$spacing-md variables.$spacing-lg;
+      font-size: variables.$font-size-md;
+      border-radius: variables.$radius-md;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+
+      &:hover {
+        background-color: darken(variables.$color-warning, 10%);
+        transform: translateY(-2px);
+      }
+    }
+  }
 }
 
 .image-carrusel {
+  flex: 1 1 600px;
   position: relative;
-  width: 80%;
-  margin: auto;
   overflow: hidden;
+  border-radius: variables.$radius-md;
+  box-shadow: 0 4px 15px rgba(0, 0, 0, 0.1);
 
   .carrousel-track {
     display: flex;
-    transition: transform 0.4s ease;
+    transition: transform 0.6s ease-in-out;
   }
 
   .card {
     position: relative;
-    min-width: 60%;
+    min-width: 100%;
+    height: 350px;
+    border-radius: variables.$radius-md;
+    overflow: hidden;
+
     img {
-      width: 80%;
-      height: auto;
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
       display: block;
+      transition: transform 0.5s ease;
+    }
+
+    &:hover img {
+      transform: scale(1.05);
     }
 
     .card-info {
       position: absolute;
-      width: 70%;
-      bottom: 20px;
-      left: 20px;
-      background: rgba(255,255,255,0.9);
-      padding: 1rem;
-      border-radius: 8px;
-      display: flex;
-      flex-direction: column;
-      gap: 0.5rem;
+      bottom: 0;
+      left: 0;
+      right: 0;
+      background: rgba(255, 255, 255, 0.75);
+      backdrop-filter: blur(8px);
+      padding: variables.$spacing-md;
+      border-top-right-radius: variables.$radius-md;
 
       span {
-        font-size: 0.9rem;
-        color: gray;
+        font-size: variables.$font-size-sm;
+        text-transform: uppercase;
+        color: variables.$color-dark;
+        letter-spacing: 0.5px;
       }
 
       h3 {
-        font-size: 1.2rem;
-        color: black;
+        font-size: variables.$font-size-lg;
+        color: variables.$color-dark;
+        margin-top: variables.$spacing-xs;
       }
 
       button {
+        margin-top: variables.$spacing-sm;
         align-self: flex-end;
-        background: gray;
-        color: white;
+        background: variables.$color-warning;
+        color: #fff;
         border: none;
-        padding: 0.5rem 0.8rem;
+        padding: 0.5rem 1rem;
         border-radius: variables.$radius-sm;
+        font-size: variables.$font-size-sm;
         cursor: pointer;
+        transition: background-color 0.3s ease;
+
+        &:hover {
+          background-color: darken(variables.$color-warning, 15%);
+        }
       }
     }
   }
 
-  button.prev, button.next {
+  /* Botones de navegación */
+  button.prev,
+  button.next {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(236, 236, 236, 0.5);
-    color: rgb(0, 0, 0);
+    background: rgba(255, 255, 255, 0.8);
+    color: variables.$color-dark;
     border: none;
-    padding: 0.5rem 1rem;
-    border-radius: variables.$radius-round;
+    padding: 0.7rem 1rem;
+    border-radius: 50%;
     cursor: pointer;
+    font-size: 1.2rem;
+    font-weight: bold;
+    transition: background 0.3s ease, transform 0.2s ease;
 
-    &.prev { left: 10px; }
-    &.next { right: 10px; }
+    &:hover {
+      background: variables.$color-warning;
+      color: #fff;
+      transform: scale(1.1);
+    }
+
+    &.prev { left: 15px; }
+    &.next { right: 15px; }
   }
 
+  /* Puntos del carrusel */
   .carousel-dots {
     position: absolute;
-    bottom: 10px;
+    bottom: 15px;
     left: 50%;
     transform: translateX(-50%);
     display: flex;
@@ -132,9 +165,38 @@
     .dot {
       width: 10px;
       height: 10px;
-      background: gray;
+      background: #ccc;
       border-radius: 50%;
-      &.active { background: black; }
+      cursor: pointer;
+      transition: background-color 0.3s ease;
+
+      &.active {
+        background: variables.$color-warning;
+      }
+    }
+  }
+}
+
+/* 🧩 Responsive */
+@media (max-width: 900px) {
+  .beneficios {
+    flex-direction: column;
+    text-align: center;
+
+    .beneficios-card {
+      align-items: center;
+      padding-left: 0;
+      margin-right: 0;
+
+      p {
+        max-width: 400px;
+      }
+    }
+
+    .image-carrusel {
+      width: 100%;
+      max-width: 500px;
+      margin-top: variables.$spacing-xl;
     }
   }
 }
